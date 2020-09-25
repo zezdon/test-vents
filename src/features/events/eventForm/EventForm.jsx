@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Segment, Header, Form, Button } from 'semantic-ui-react';
 import cuid from 'cuid';
 
-export default function EventForm({ setFormOpen, setEvents, createEvent }) {
-    const initialValues = {
+export default function EventForm({ setFormOpen, setEvents, createEvent, selectedEvent }) {
+    const initialValues = selectedEvent ?? {
         title: '',
         category: '',
         description: '',
@@ -32,7 +32,7 @@ export default function EventForm({ setFormOpen, setEvents, createEvent }) {
 
     return (
         <Segment clearing>
-            <Header content='Create new event' />
+            <Header content={selectedEvent ? 'Edit the event' : 'Create new event'} />
             <Form onSubmit={hanleFormSubmit}>
                 <Form.Field>
                     <input 
