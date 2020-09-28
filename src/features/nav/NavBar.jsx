@@ -3,6 +3,7 @@ import { Menu, Container, Button } from 'semantic-ui-react';
 import { NavLink, useHistory } from 'react-router-dom';
 import SignedOutMenu from './SignedOutMenu';
 import SignedInMenu from './SignedInMenu';
+import Sandbox from '../../features/sandbox/Sandbox';
 
 export default function NavBar({setFormOpen}) {
     const history = useHistory();
@@ -21,6 +22,7 @@ export default function NavBar({setFormOpen}) {
                     Test-vents
                 </Menu.Item>
                 <Menu.Item as={NavLink} to='/events' name='Events' />
+                <Menu.Item as={NavLink} to='/sandbox' name='Sandbox' />
                 {authenticated &&
                 <Menu.Item as={NavLink} to='/createEvent'>
                     <Button positive inverted content='Create Event' />
