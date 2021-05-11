@@ -3,7 +3,7 @@ import { Menu, Container, Button } from 'semantic-ui-react';
 import { NavLink, useHistory } from 'react-router-dom';
 import SignedOutMenu from './SignedOutMenu';
 import SignedInMenu from './SignedInMenu';
-import Sandbox from '../../features/sandbox/Sandbox';
+//import Sandbox from '../../features/sandbox/Sandbox';
 
 export default function NavBar({setFormOpen}) {
     const history = useHistory();
