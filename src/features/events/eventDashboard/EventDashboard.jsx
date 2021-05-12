@@ -15,14 +15,14 @@ export default function EventDashboard() {
     //    setEvents(events.map(evt => evt.id === updatedEvent.id ? updatedEvent : evt));       
     //}
 
-    function handleDeleteEvent(eventId) {
+    //function handleDeleteEvent(eventId) {
         //setEvents(events.filter(evt => evt.id !== eventId));
-    }
+    //}
 
     return (
         <Grid>
-            <Grid.Column width={10}>
-                <EventList events={events} deleteEvent={handleDeleteEvent}/>
+            <Grid.Column width={10}>                
+                <EventList events={events} />
             </Grid.Column>
             <Grid.Column width={6}>
                 <h2>Event Filters</h2>
