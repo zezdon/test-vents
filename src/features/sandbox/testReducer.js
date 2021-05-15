@@ -16,7 +16,7 @@ export function decrement(amount) {
 }
 
 const initialState = {
-    data: 42
+    data: 44
 }
 
 export default function testReducer(state = initialState, { type, payload }) {
