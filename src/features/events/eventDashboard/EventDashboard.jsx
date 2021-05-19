@@ -2,18 +2,24 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import EventList from './EventList';
 import { useSelector } from 'react-redux';
-import LoadingComponent from '../../../app/layout/LoadingComponent';
-//import {sampleData} from '../../../app/api/sampleData';
+//import LoadingComponent from '../../../app/layout/LoadingComponent';
+import EventListItemPlaceholder from './EventListItemPlaceholder';
 
 export default function EventDashboard() {
     const {events} = useSelector((state) => state.event);
     const { loading } = useSelector(state => state.async);
 
-    if (loading) return <LoadingComponent />
+    //if (loading) return <LoadingComponent />
 
     return (
         <Grid>
-            <Grid.Column width={10}>                
+            <Grid.Column width={10}>
+                {loading &&
+                    <>
+                        <EventListItemPlaceholder />
+                        <EventListItemPlaceholder />
+                    </>
+                }                
                 <EventList events={events} />
             </Grid.Column>
             <Grid.Column width={6}>
